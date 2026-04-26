@@ -7,7 +7,7 @@ import { AnimatedSection } from '../AnimatedSection';
 import costumeImg from '../../../imports/Costume2.jpeg';
 import chemiseImg from '../../../imports/Chemise.jpeg';
 import chaussureImg from '../../../imports/Chaussure7.jpeg';
-import cravateImg from '../../../imports/Cravate.jpeg';
+import cravateImg from '../../../imports/Cravate.jpg';
 import poloImg from '../../../imports/Polo2.jpeg';
 import tshirtImg from '../../../imports/T-shirt1.jpeg';
 import pantalonImg from '../../../imports/pentalon.jpeg';

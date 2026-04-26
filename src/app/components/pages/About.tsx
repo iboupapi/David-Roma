@@ -5,12 +5,11 @@ import { AnimatedSection } from '../AnimatedSection';
 import { SITE_CONFIG } from '../../../content';
 import costumeImg from '../../../imports/Costume3.jpeg';
 import chemiseImg from '../../../imports/Chemise.jpeg';
-import proprietaireImg from '../../../imports/propriétaire.jpeg';
-import proprietaireHakilImg from '../../../imports/propriétaire_Hakil.jpeg';
-import proprietaire2Img from '../../../imports/propriétaire2.jpeg';
-import proprietaireConseilImg from '../../../imports/propriétaireConseil.jpeg';
-import proprietaireConseil1Img from '../../../imports/propriétaireConseil1.jpeg';
-import proprietairePapeDiopImg from '../../../imports/propriétaire_pape_diop.jpeg';
+import proprietaireImg from '../../../imports/proprietaire.jpeg';
+import proprietaireHakilImg from '../../../imports/proprietaire_Hakil.jpeg';
+import proprietaire2Img from '../../../imports/proprietaire2.jpeg';
+import proprietaireConseilImg from '../../../imports/proprietaireConseil.jpeg';
+import proprietaireConseil1Img from '../../../imports/proprietaireConseil1.jpeg';
 import costume4Img from '../../../imports/Costume4.jpeg';
 import costume5Img from '../../../imports/Costume5.jpeg';
 

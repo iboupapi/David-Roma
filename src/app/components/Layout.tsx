@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react';
-import logo from '../../imports/Logo_David_Roma.png';
+import logo from '../../imports/Logo_David_Roma-removebg-preview.png';
 import logoDark from '../../imports/David_Roma__2_-removebg-preview.png';
 
 export function Layout() {

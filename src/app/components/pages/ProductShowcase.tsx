@@ -9,7 +9,7 @@ import costume32Img from '../../../imports/Costume3-2.jpeg';
 import chemiseImg from '../../../imports/Chemise.jpeg';
 import chaussureImg from '../../../imports/Chaussure7.jpeg';
 import chaussure9Img from '../../../imports/Chaussure9.jpeg';
-import cravateImg from '../../../imports/Cravate.jpeg';
+import cravateImg from '../../../imports/Cravate.jpg';
 import poloImg from '../../../imports/Polo2.jpeg';
 import tshirtImg from '../../../imports/T-shirt1.jpeg';
 import tshirt2Img from '../../../imports/T-shirt-1.jpeg';
