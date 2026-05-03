@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://david-roma.vercel.app/</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://david-roma.vercel.app/a-propos</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://david-roma.vercel.app/collections</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://david-roma.vercel.app/collection/costumes</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://david-roma.vercel.app/collection/blazers</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://david-roma.vercel.app/collection/chemises</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://david-roma.vercel.app/collection/pantalons</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://david-roma.vercel.app/collection/pantalons-kaki</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://david-roma.vercel.app/collection/chaussures</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://david-roma.vercel.app/collection/ceintures</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://david-roma.vercel.app/collection/cravates</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://david-roma.vercel.app/collection/polos</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://david-roma.vercel.app/collection/chaussettes</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://david-roma.vercel.app/collection/tshirts</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://david-roma.vercel.app/contact</loc>
+    <lastmod>2025-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

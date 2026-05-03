@@ -3,6 +3,7 @@ import { Link, Outlet, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react';
 import logo from '../../imports/Logo_David_Roma-removebg-preview.png';
 import logoDark from '../../imports/David_Roma__2_-removebg-preview.png';
+import { JsonLd } from './SEO';
 
 export function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -37,6 +38,7 @@ export function Layout() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <JsonLd />
       {/* Navigation */}
       <nav
         className={`sticky top-0 z-50 transition-all duration-500 ${
