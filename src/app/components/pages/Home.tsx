@@ -7,13 +7,13 @@ import { SITE_CONFIG } from '../../../content';
 import heroImage from '../../../imports/Costume2.jpeg';
 import chemiseImg from '../../../imports/Chemise.jpeg';
 import chaussureImg from '../../../imports/Chaussure7.jpeg';
-import cravateImg from '../../../imports/Cravate.jpg';
+import cravateImg from '../../../imports/Cravate.jpeg';
 import poloImg from '../../../imports/Polo2.jpeg';
 import tshirtImg from '../../../imports/T-shirt1.jpeg';
 import pantalonImg from '../../../imports/pentalon.jpeg';
 import ceintureImg from '../../../imports/Ceinture.jpeg';
 import chaussetteImg from '../../../imports/Chaussette.jpeg';
-import styleImg from '../../../imports/style_conseil.jpeg';
+import styleImg from '../../../imports/WhatsApp_Image_2026-04-22_at_18_46_38.jpeg';
 import complet1Img from '../../../imports/Complet.jpeg';
 import complet2Img from '../../../imports/Complet1.jpeg';
 import complet3Img from '../../../imports/Complet2.jpeg';
@@ -47,13 +47,15 @@ export function Home() {
   return (
     <div>
       <Helmet>
-        <title>David Roma — Mode italienne authentique à Dakar</title>
-        <meta name="description" content="David Roma, mode masculine italienne à Dakar. Produits 100% originaux fabriqués en Italie à des prix inférieurs. 15+ ans d'expérience. Costumes, chemises, chaussures, ceintures, chaussettes." />
-        <meta name="keywords" content="mode homme Dakar, costume italien Sénégal, David Roma, produits originaux italiens Dakar, SICAP Liberté" />
-        <meta property="og:title" content="David Roma — Mode italienne authentique à Dakar" />
-        <meta property="og:description" content="Produits italiens authentiques à Dakar. 15+ ans d'expérience en Italie. Zéro intermédiaire = prix réduits." />
+        <title>David Roma — Costume & Vêtements Italiens à Dakar, Sénégal</title>
+        <meta name="description" content="Achetez des costumes, blazers et vêtements 100% italiens à Dakar au Sénégal. David Roma propose des articles Made in Italy originaux moins chers qu'en Italie. SICAP Liberté 1, Dakar." />
+        <meta name="keywords" content="costume italien Dakar, vêtement italien Sénégal, blazer italien Dakar, mode homme Sénégal, costume homme Dakar, made in Italy Dakar, chemise italienne Sénégal, chaussure italienne Dakar, costume mariage Dakar, boutique costume Dakar" />
+        <meta property="og:title" content="David Roma — Costumes & Vêtements Italiens à Dakar" />
+        <meta property="og:description" content="Costumes, blazers, chemises et chaussures 100% Made in Italy à Dakar. Originaux moins chers qu'en Italie. SICAP Liberté 1." />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://davidroma.sn/" />
+        <meta property="og:url" content="https://david-roma.vercel.app/" />
+        <meta property="og:locale" content="fr_SN" />
+        <link rel="canonical" href="https://david-roma.vercel.app/" />
       </Helmet>
 
       {/* ===== HERO ===== */}
