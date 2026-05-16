@@ -72,7 +72,33 @@ export function Collections() {
       <Helmet>
         <title>Collections — David Roma | Vêtements & Accessoires italiens à Dakar</title>
         <meta name="description" content="Blazers, costumes, chemises, pantalons, ceintures, chaussettes et chaussures 100% made in Italy. Moins chers qu'en Italie. Showroom David Roma à Dakar, SICAP Liberté 1." />
-        <link rel="canonical" href="https://davidroma.sn/collections" />
+        <link rel="canonical" href="https://david-roma.vercel.app/collections" />
+        <script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Collections David Roma",
+    url: "https://david-roma.vercel.app/collections",
+    description:
+      "Collections de vêtements et accessoires italiens premium à Dakar.",
+    mainEntity: collections.map((col) => ({
+      "@type": "Product",
+      name: `${col.name} italiens`,
+      category: col.name,
+      url: `https://david-roma.vercel.app/collection/${col.slug}`,
+      brand: {
+        "@type": "Brand",
+        name: "David Roma",
+      },
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "XOF",
+        price: "50000",
+        availability: "https://schema.org/InStock",
+      },
+    })),
+  })}
+</script>
       </Helmet>
 
       {/* ===== HERO ===== */}

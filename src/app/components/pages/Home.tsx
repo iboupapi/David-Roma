@@ -56,6 +56,56 @@ export function Home() {
         <meta property="og:url" content="https://david-roma.vercel.app/" />
         <meta property="og:locale" content="fr_SN" />
         <link rel="canonical" href="https://david-roma.vercel.app/" />
+        <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Store",
+      name: "David Roma",
+      image: "https://david-roma.vercel.app/og-image.jpg",
+      url: "https://david-roma.vercel.app/",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Dakar",
+        addressCountry: "SN"
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Collections David Roma",
+        itemListElement: [
+        {
+          "@type": "Product",
+          name: "Costumes italiens",
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "XOF",
+            price: "50000",
+            availability: "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          name: "Blazers italiens",
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "XOF",
+            price: "50000",
+            availability: "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Product",
+          name: "Chemises italiennes",
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "XOF",
+            price: "50000",
+            availability: "https://schema.org/InStock"
+          }
+        }
+      ]
+    }
+  })}
+</script>
       </Helmet>
 
       {/* ===== HERO ===== */}

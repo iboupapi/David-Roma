@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type ChangeEvent, type SyntheticEvent } from 'react';
 import { motion } from 'motion/react';
 import { Phone, MessageCircle, MapPin, Clock, Calendar, Mail, Globe } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
@@ -26,7 +26,7 @@ export function Contact() {
     { value: 'consultation', label: 'Consultation générale' },
   ];
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     const msg = `Bonjour David Roma 👋\n\nNom : ${contactForm.name}\nTél : ${contactForm.phone}\n\nMessage : ${contactForm.message}`;
     window.open(`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
@@ -34,11 +34,11 @@ export function Contact() {
     setContactForm({ name: '', phone: '', message: '' });
   };
 
-  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleContactChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setContactForm({ ...contactForm, [e.target.name]: e.target.value });
   };
 
-  const handleAppointmentSubmit = (e: React.FormEvent) => {
+  const handleAppointmentSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     const msg = `Bonjour David Roma 👋\n\nJe souhaite prendre rendez-vous.\n\n👤 Nom : ${appointmentForm.name}\n📞 Tél : ${appointmentForm.phone}\n👔 Service : ${appointmentForm.service}\n📅 Date : ${appointmentForm.date}\n🕐 Heure : ${appointmentForm.time}\n📝 Notes : ${appointmentForm.notes || 'Aucune'}`;
     window.open(`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
@@ -47,7 +47,7 @@ export function Contact() {
   };
 
   const handleAppointmentChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     setAppointmentForm({ ...appointmentForm, [e.target.name]: e.target.value });
   };
