@@ -153,7 +153,7 @@ export function About() {
         <div className="mx-auto max-w-6xl">
           <AnimatedSection>
             <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-              <div className="relative">
+              <div className="relative pr-4 pb-4 sm:pr-0 sm:pb-0">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.5 }}
@@ -166,14 +166,15 @@ export function About() {
                   />
                 </motion.div>
 
-                <div className="absolute -right-6 -bottom-6 bg-[#d4af37] p-6 text-center text-black shadow-xl">
+                {/* BADGE CORRIGÉ : Dépasse légèrement sans jamais casser la responsivité sur mobile */}
+                <div className="absolute right-0 -bottom-2 sm:-right-6 sm:-bottom-6 bg-[#d4af37] p-4 sm:p-6 text-center text-black shadow-xl z-20 rounded-sm transform hover:scale-105 transition-transform duration-300">
                   <p
-                    className="text-4xl font-bold"
+                    className="text-2xl sm:text-4xl font-bold"
                     style={{ fontFamily: 'var(--font-serif)' }}
                   >
                     15+
                   </p>
-                  <p className="mt-1 text-sm tracking-wider">
+                  <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-sm tracking-wider font-semibold">
                     {t('about.founder.experienceBadge', 'ANS EN ITALIE')}
                   </p>
                 </div>
@@ -421,7 +422,7 @@ export function About() {
             <div className="space-y-8 text-xl leading-relaxed text-gray-700">
               <p>{t('about.story.p1', "David Roma est né d'une passion pour l'élégance masculine et d'un profond respect pour le savoir-faire italien. Basée à Dakar, notre maison célèbre l'union entre l'identité sénégalaise et l'excellence de la mode transalpine.")}</p>
               <p>{t('about.story.p2', 'Chaque costume, chemise ou paire de chaussures que nous proposons est fabriqué en Italie, berceau historique de la haute couture masculine. Nous travaillons avec des ateliers renommés qui perpétuent des traditions artisanales centenaires.')}</p>
-              <p>{t('about.story.p3', "Notre mission est d'offrir à l'homme africain moderne une garde-robe qui reflète son succès, son raffinement et son goût pour l'excellence — à des prix qu'il ne trouverait pas même en allant directement en Italie.")}</p>
+              <p>{t('about.story.p3', "Notre mission is d'offrir à l'homme africain moderne une garde-robe qui reflète son succès, son raffinement et son goût pour l'excellence — à des prix qu'il ne trouverait pas même en allant directement en Italie.")}</p>
             </div>
           </AnimatedSection>
         </div>
@@ -491,20 +492,19 @@ export function About() {
                 <p className="text-xl leading-relaxed text-gray-700">{t('about.detail.p2', "C'est cette quête de perfection qui fait de chaque vêtement David Roma une pièce unique, taillée pour durer et sublimer celui qui la porte.")}</p>
 
                 <div className="flex items-start gap-4 p-3 rounded-sm hover:bg-gray-50 transition-colors duration-250">
-  <div className="flex-shrink-0 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center border border-gray-200/50">
-    <MapPin className="h-4 w-4 text-[#d4af37]" />
-  </div>
-  
-  <div className="flex-1 min-w-0">
-    <h4 className="text-xs tracking-widest uppercase font-semibold text-gray-400 mb-0.5">
-      {t('contact.info.addressTitle', 'Notre Showroom')}
-    </h4>
-    {/* Remplacement ici : On appelle directement la configuration brute */}
-    <p className="text-gray-700 text-sm sm:text-base font-medium leading-relaxed whitespace-pre-line">
-      {SITE_CONFIG.adresse}
-    </p>
-  </div>
-</div>
+                  <div className="flex-shrink-0 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center border border-gray-200/50">
+                    <MapPin className="h-4 w-4 text-[#d4af37]" />
+                  </div>
+                  
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-xs tracking-widest uppercase font-semibold text-gray-400 mb-0.5">
+                      {t('contact.info.addressTitle', 'Notre Showroom')}
+                    </h4>
+                    <p className="text-gray-700 text-sm sm:text-base font-medium leading-relaxed whitespace-pre-line">
+                      {SITE_CONFIG.adresse}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </AnimatedSection>

@@ -97,36 +97,30 @@ export function Collections() {
   return (
     <div style={{ background: '#0a0a0a' }}>
       <Helmet>
-        <title>{t('collections.seo.title', 'Collections — David Roma | Vêtements & Accessoires italiens à Dakar')}</title>
-        <meta name="description" content={t('collections.seo.description', "Blazers, costumes, chemises, pantalons, ceintures, chaussettes et chaussures 100% made in Italy. Moins chers qu'en Italie. Showroom David Roma à Dakar, SICAP Liberté 1.")} />
-        <link rel="canonical" href="https://davidroma.sn/collections" />
-        
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            name: t('collections.seo.ogTitle', 'Collections David Roma'),
-            url: "https://davidroma.sn/collections",
-            description: t('collections.seo.ogDesc', 'Collections de vêtements et accessoires italiens premium à Dakar.'),
-            mainEntity: localizedCollections.map((col) => ({
-              "@type": "Product",
-              name: `${col.name}`,
-              category: col.name,
-              url: `https://davidroma.sn/collection/${col.slug}`,
-              brand: {
-                "@type": "Brand",
-                name: "David Roma",
-              },
-              offers: {
-                "@type": "Offer",
-                priceCurrency: "XOF",
-                price: "50000",
-                availability: "https://schema.org/InStock",
-              },
-            })),
-          })}
-        </script>
-      </Helmet>
+  <title>{t('collections.seo.title', 'Collections — David Roma | Vêtements & Accessoires italiens à Dakar')}</title>
+  <meta name="description" content={t('collections.seo.description', "Blazers, costumes, chemises, pantalons, ceintures, chaussettes et chaussures 100% made in Italy. Moins chers qu'en Italie. Showroom David Roma à Dakar, SICAP Liberté 1.")} />
+  <link rel="canonical" href="https://david-roma.vercel.app/collections" />
+  
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": t('collections.seo.ogTitle', 'Collections David Roma'),
+      "url": "https://david-roma.vercel.app/collections",
+      "description": t('collections.seo.ogDesc', 'Collections de vêtements et accessoires italiens premium à Dakar.'),
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": localizedCollections.length,
+        "itemListElement": localizedCollections.map((col, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": col.name,
+          "url": `https://david-roma.vercel.app/collection/${col.slug}`
+        }))
+      }
+    })}
+  </script>
+</Helmet>
 
       {/* ===== HERO ===== */}
       <section className="relative overflow-hidden" style={{ height: 'calc(100svh - 0px)', minHeight: 500 }}>
@@ -149,12 +143,18 @@ export function Collections() {
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40 }} 
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-            style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(3.5rem, 15vw, 8rem)', letterSpacing: '-0.03em', lineHeight: 0.9 }}
-            className="text-white mb-8"
+            style={{ 
+              fontFamily: 'var(--font-serif)', 
+              fontSize: 'clamp(3rem, 13vw, 8rem)', // Légère réduction du max-fluid pour les minis mobiles
+              letterSpacing: '-0.03em', 
+              lineHeight: 0.9 
+            }}
+            className="text-white mb-8 whitespace-nowrap md:whitespace-normal"
           >
-            {t('collections.hero.titlePart1', 'Collec')}<span className="md:inline block">{t('collections.hero.titlePart2', 'tions')}</span>
+            {t('collections.hero.title', 'Collections')}
           </motion.h1>
 
           <motion.div
