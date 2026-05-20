@@ -61,24 +61,23 @@ export function JsonLd() {
           'https://www.google.com/maps/place/?q=place_id:ChIJxSsXziv-Fh8RvOBeOABLdXc',
 
         areaServed: [
-  {
-    "@type": "City",
-    "name": "Dakar"
-  },
-  
-  {
-    "@type": "Country",
-    "name": "Senegal"
-  },
-  {
-    "@type": "Place",
-    "name": "West Africa"
-  },
-  {
-    "@type": "Country",
-    "name": "Italy"
-  }
-],
+          {
+            "@type": "City",
+            "name": "Dakar"
+          },
+          {
+            "@type": "Country",
+            "name": "Senegal"
+          },
+          {
+            "@type": "Place",
+            "name": "West Africa"
+          },
+          {
+            "@type": "Country",
+            "name": "Italy"
+          }
+        ],
 
         openingHoursSpecification: [
           {
@@ -129,6 +128,7 @@ export function JsonLd() {
           'Made in Italy',
         ],
 
+        // Conservation des URL d'origine sans "s" (/collection/)
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
           name: 'Collections David Roma',
@@ -137,7 +137,7 @@ export function JsonLd() {
             {
               '@type': 'Offer',
               itemOffered: {
-                '@type': 'Product',
+                '@type': 'CollectionPage',
                 name: 'Costumes italiens',
                 url: `${baseUrl}/collection/costumes`,
               },
@@ -146,7 +146,7 @@ export function JsonLd() {
             {
               '@type': 'Offer',
               itemOffered: {
-                '@type': 'Product',
+                '@type': 'CollectionPage',
                 name: 'Blazers italiens',
                 url: `${baseUrl}/collection/blazers`,
               },
@@ -155,7 +155,7 @@ export function JsonLd() {
             {
               '@type': 'Offer',
               itemOffered: {
-                '@type': 'Product',
+                '@type': 'CollectionPage',
                 name: 'Chemises italiennes',
                 url: `${baseUrl}/collection/chemises`,
               },
@@ -164,7 +164,7 @@ export function JsonLd() {
             {
               '@type': 'Offer',
               itemOffered: {
-                '@type': 'Product',
+                '@type': 'CollectionPage',
                 name: 'Pantalons italiens',
                 url: `${baseUrl}/collection/pantalons`,
               },
@@ -173,7 +173,7 @@ export function JsonLd() {
             {
               '@type': 'Offer',
               itemOffered: {
-                '@type': 'Product',
+                '@type': 'CollectionPage',
                 name: 'Chaussures italiennes',
                 url: `${baseUrl}/collection/chaussures`,
               },
@@ -182,7 +182,7 @@ export function JsonLd() {
             {
               '@type': 'Offer',
               itemOffered: {
-                '@type': 'Product',
+                '@type': 'CollectionPage',
                 name: 'Ceintures italiennes',
                 url: `${baseUrl}/collection/ceintures`,
               },
@@ -191,7 +191,7 @@ export function JsonLd() {
             {
               '@type': 'Offer',
               itemOffered: {
-                '@type': 'Product',
+                '@type': 'CollectionPage',
                 name: 'Cravates italiennes',
                 url: `${baseUrl}/collection/cravates`,
               },
@@ -200,7 +200,7 @@ export function JsonLd() {
             {
               '@type': 'Offer',
               itemOffered: {
-                '@type': 'Product',
+                '@type': 'CollectionPage',
                 name: 'Polos italiens',
                 url: `${baseUrl}/collection/polos`,
               },
@@ -209,7 +209,7 @@ export function JsonLd() {
             {
               '@type': 'Offer',
               itemOffered: {
-                '@type': 'Product',
+                '@type': 'CollectionPage',
                 name: 'Chaussettes italiennes',
                 url: `${baseUrl}/collection/chaussettes`,
               },
@@ -218,7 +218,7 @@ export function JsonLd() {
             {
               '@type': 'Offer',
               itemOffered: {
-                '@type': 'Product',
+                '@type': 'CollectionPage',
                 name: 'T-shirts premium',
                 url: `${baseUrl}/collection/tshirts`,
               },
