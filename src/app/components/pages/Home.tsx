@@ -55,19 +55,36 @@ export function Home() {
     { icon: Award, titre: t('home.engagement.points.expert.title', 'Expert sur place'), detail: t('home.engagement.points.expert.desc', '15+ ans en Italie pour sélectionner les meilleures pièces') },
   ];
 
-  // Fallback manuel au cas où la liste dynamique de i18n est manquante ou vide dans config.conseils
   const defaultConseils: ConseilItem[] = [
-  { 
-    titre: "Le Costume Parfait", 
-    conseil: "Un costume bien ajusté est votre meilleur allié. La veste doit épouser vos épaules sans déborder." 
-  },
-  { 
-    titre: "Ceinture & Chaussures", // Corrigé ici (titre au lieu de border)
-    conseil: "Assurez-vous toujours que votre ceinture et vos chaussures sont de la même couleur." 
-  }
-];
+    { 
+      titre: "Le Costume Parfait", 
+      conseil: "Un costume bien ajusté est votre meilleur allié. La veste doit épouser vos épaules sans déborder." 
+    },
+    { 
+      titre: "Ceinture & Chaussures", 
+      conseil: "Assurez-vous toujours que votre ceinture et vos chaussures sont de la même couleur." 
+    }
+  ];
 
   const conseilsListe = (t('config.conseils', { returnObjects: true }) as ConseilItem[]) || defaultConseils;
+
+  // Création du schéma de Commerce Local propre pour la page d'accueil (évite les erreurs Product)
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "David Roma",
+    "image": "https://davidroma.sn/og-image.jpg", 
+    "@id": "https://davidroma.sn/#store",
+    "url": "https://davidroma.sn/",
+    "telephone": SITE_CONFIG.telephone || "",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "SICAP Liberté 1",
+      "addressLocality": "Dakar",
+      "addressCountry": "SN"
+    },
+    "priceRange": "$$$"
+  };
 
   return (
     <div>
@@ -78,9 +95,14 @@ export function Home() {
         <meta property="og:title" content={t('home.seo.title', 'David Roma — Costume & Vêtements Italiens à Dakar, Sénégal')} />
         <meta property="og:description" content={t('home.seo.ogDesc', 'Costumes, blazers, chemises et chaussures 100% Made in Italy à Dakar.')} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://david-roma.vercel.app/" />
+        <meta property="og:url" content="https://davidroma.sn/" />
         <meta property="og:locale" content={i18n.language === 'it' ? 'it_IT' : 'fr_SN'} />
-        <link rel="canonical" href="https://david-roma.vercel.app/" />
+        <link rel="canonical" href="https://davidroma.sn/" />
+        
+        {/* Injecté de manière propre sans aucune référence à `@type: "Product"` */}
+        <script type="application/ld+json">
+          {JSON.stringify(homeSchema)}
+        </script>
       </Helmet>
 
       {/* ===== HERO ===== */}
@@ -106,7 +128,6 @@ export function Home() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="mb-12 text-gray-200 text-xl max-w-2xl mx-auto"
           >
-            {/* Remplacement par home.intro.desc car config.sous_slogan n'existe pas */}
             {t('home.intro.desc')}
           </motion.p>
 
@@ -181,60 +202,54 @@ export function Home() {
       </AnimatedSection>
 
       {/* ===== SECTION EXCLUSIVE : NOUVEAUTÉ CHAUSSURES SUR MESURE ===== */}
-<section className="py-16 sm:py-24 px-4 bg-[#0a0a0a] border-t border-b border-white/5 overflow-hidden">
-  <div className="max-w-6xl mx-auto">
-    <AnimatedSection>
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        
-        {/* Conteneur Image corrigé pour le responsive */}
-        <div className="lg:col-span-6 relative group overflow-hidden w-full rounded-sm shadow-2xl">
-          {/* Badge */}
-          <div className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-[#d4af37] text-black text-[10px] sm:text-[11px] font-bold tracking-[0.15em] uppercase px-3 py-1.5 sm:px-4 sm:py-1.5 shadow-lg">
-            <Sparkles className="h-3 w-3 fill-black" /> {t('home.exclusive.badge', 'NOUVEAUTÉ EXCLUSIVE')}
-          </div>
-          
-          {/* Remplacement du h-[480px] fixe par des ratios responsives et fluides */}
-          <motion.div 
-            whileHover={{ scale: 1.02 }} 
-            transition={{ duration: 0.5 }} 
-            className="w-full aspect-square sm:aspect-[4/5] lg:h-[520px]"
-          >
-            <img 
-              src={chaussureSurMesureImg} 
-              alt="Nouvelle collection Chaussures sur mesure par David Roma" 
-              className="w-full h-full object-cover object-center" 
-              loading="lazy"
-            />
-          </motion.div>
-          
-          {/* Voile sombre de finition */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-        </div>
+      <section className="py-16 sm:py-24 px-4 bg-[#0a0a0a] border-t border-b border-white/5 overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedSection>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              
+              <div className="lg:col-span-6 relative group overflow-hidden w-full rounded-sm shadow-2xl">
+                <div className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-[#d4af37] text-black text-[10px] sm:text-[11px] font-bold tracking-[0.15em] uppercase px-3 py-1.5 sm:px-4 sm:py-1.5 shadow-lg">
+                  <Sparkles className="h-3 w-3 fill-black" /> {t('home.exclusive.badge', 'NOUVEAUTÉ EXCLUSIVE')}
+                </div>
+                
+                <motion.div 
+                  whileHover={{ scale: 1.02 }} 
+                  transition={{ duration: 0.5 }} 
+                  className="w-full aspect-square sm:aspect-[4/5] lg:h-[520px]"
+                >
+                  <img 
+                    src={chaussureSurMesureImg} 
+                    alt="Nouvelle collection Chaussures sur mesure par David Roma" 
+                    className="w-full h-full object-cover object-center" 
+                    loading="lazy"
+                  />
+                </motion.div>
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+              </div>
 
-        {/* Conteneur Texte */}
-        <div className="lg:col-span-6 text-left lg:pl-4 mt-4 lg:mt-0">
-          <p className="text-[#d4af37] text-xs tracking-[0.3em] uppercase mb-3 font-semibold">{t('home.exclusive.tag', 'HAUTE CORDONNERIE')}</p>
-          <h2 className="text-white mb-5 sm:mb-6" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 4vw, 3.2rem)', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
-            {t('home.exclusive.title1', 'Souliers ')}<span className="text-[#d4af37]">{t('home.exclusive.title2', 'Sur Mesure')}</span>
-          </h2>
-          <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-5 sm:mb-6">
-            {t('home.exclusive.desc1', 'David Roma franchit une nouvelle étape dans le prestige. Découvrez notre tout nouveau service de confection artisanale à la commande.')}
-          </p>
-          <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 border-l-2 border-[#d4af37] pl-4 italic">
-            {t('home.exclusive.desc2', 'Chaque paire est fabriquée de manière unique en Italie, moulée selon la morphologie de votre pied avec les cuirs les plus nobles de la péninsule.')}
-          </p>
-          
-          {/* Bouton adapté au mobile (w-full sur mobile pour cliquer facilement) */}
-          <Link to="/contact" className="group flex sm:inline-flex items-center justify-center gap-3 bg-transparent border border-[#d4af37] text-[#d4af37] px-8 py-4 hover:bg-[#d4af37] hover:text-black transition-all duration-300 w-full sm:w-auto">
-            <span style={{ letterSpacing: '0.05em', fontSize: '0.85rem' }}>{t('home.exclusive.btn', 'PRENDRE RENDEZ-VOUS')}</span>
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </div>
+              <div className="lg:col-span-6 text-left lg:pl-4 mt-4 lg:mt-0">
+                <p className="text-[#d4af37] text-xs tracking-[0.3em] uppercase mb-3 font-semibold">{t('home.exclusive.tag', 'HAUTE CORDONNERIE')}</p>
+                <h2 className="text-white mb-5 sm:mb-6" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 4vw, 3.2rem)', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+                  {t('home.exclusive.title1', 'Souliers ')}<span className="text-[#d4af37]">{t('home.exclusive.title2', 'Sur Mesure')}</span>
+                </h2>
+                <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-5 sm:mb-6">
+                  {t('home.exclusive.desc1', 'David Roma franchit une nouvelle étape dans le prestige. Découvrez notre tout nouveau service de confection artisanale à la commande.')}
+                </p>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 border-l-2 border-[#d4af37] pl-4 italic">
+                  {t('home.exclusive.desc2', 'Chaque paire est fabriquée de manière unique en Italie, moulée selon la morphologie de votre pied avec les cuirs les plus nobles de la péninsule.')}
+                </p>
+                
+                <Link to="/contact" className="group flex sm:inline-flex items-center justify-center gap-3 bg-transparent border border-[#d4af37] text-[#d4af37] px-8 py-4 hover:bg-[#d4af37] hover:text-black transition-all duration-300 w-full sm:w-auto">
+                  <span style={{ letterSpacing: '0.05em', fontSize: '0.85rem' }}>{t('home.exclusive.btn', 'PRENDRE RENDEZ-VOUS')}</span>
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
 
-      </div>
-    </AnimatedSection>
-  </div>
-</section>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
 
       {/* ===== COLLECTIONS ===== */}
       <section className="py-32 px-4 bg-black">
@@ -292,7 +307,6 @@ export function Home() {
             </AnimatedSection>
           </div>
 
-          {/* Rendu dynamique des conseils */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
             {Array.isArray(conseilsListe) && conseilsListe.map((item, index) => (
               <AnimatedSection key={index} delay={index * 0.1}>
