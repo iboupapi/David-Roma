@@ -162,7 +162,6 @@ export function ProductShowcase() {
   const currentCategory = category || 'costumes';
   const staticData = staticProductData[currentCategory] || staticProductData.costumes;
 
-  // Reconstruction dynamique de l'objet traduit à partir de i18n
   const product = {
     images: staticData.images,
     title: t(`showcase.products.${currentCategory}.title`, staticData.fallback.title),
@@ -170,6 +169,26 @@ export function ProductShowcase() {
     fabric: t(`showcase.products.${currentCategory}.fabric`, staticData.fallback.fabric),
     origin: t(`showcase.products.${currentCategory}.origin`, staticData.fallback.origin),
     advice: t(`showcase.products.${currentCategory}.advice`, staticData.fallback.advice),
+  };
+
+  // Schéma structuré CollectionPage pour nettoyer le SEO de Google Search Console
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": `${product.title} Premium — David Roma Dakar`,
+    "description": product.description,
+    "url": `https://davidroma.sn/collections/${currentCategory}`,
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": `Sélection de ${product.title}`,
+      "numberOfItems": product.images.length,
+      "itemListElement": product.images.map((img, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "image": img,
+        "name": `${product.title} Option ${idx + 1}`
+      }))
+    }
   };
 
   return (
@@ -180,6 +199,11 @@ export function ProductShowcase() {
         <meta property="og:title" content={t('showcase.seo.ogTitle', '{{title}} — David Roma Dakar', { title: product.title })} />
         <meta property="og:description" content={product.description} />
         <link rel="canonical" href={`https://davidroma.sn/collections/${currentCategory}`} />
+        
+        {/* Balisage JSON-LD sécurisé sans attributs marchands requis */}
+        <script type="application/ld+json">
+          {JSON.stringify(collectionSchema)}
+        </script>
       </Helmet>
 
       {/* Back Button */}
