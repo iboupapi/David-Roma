@@ -31,15 +31,15 @@ export function Home() {
   const { t, i18n } = useTranslation();
 
   const categories = [
-    { name: t('home.collections.categories.costumes', 'Costumes'), image: heroImage, path: '/collections/costumes' },
-    { name: t('home.collections.categories.chemises', 'Chemises'), image: chemiseImg, path: '/collections/chemises' },
-    { name: t('home.collections.categories.pantalons', 'Pantalons'), image: pantalonImg, path: '/collections/pantalons' },
-    { name: t('home.collections.categories.chaussures', 'Chaussures'), image: chaussureImg, path: '/collections/chaussures' },
-    { name: t('home.collections.categories.ceintures', 'Ceintures'), image: ceintureImg, path: '/collections/ceintures' },
-    { name: t('home.collections.categories.chaussettes', 'Chaussettes'), image: chaussetteImg, path: '/collections/chaussettes' },
-    { name: t('home.collections.categories.cravates', 'Cravates'), image: cravateImg, path: '/collections/cravates' },
-    { name: t('home.collections.categories.polos', 'Polos'), image: poloImg, path: '/collections/polos' },
-    { name: t('home.collections.categories.tshirts', 'T-shirts'), image: tshirtImg, path: '/collections/tshirts' },
+    { name: t('home.collections.categories.costumes', 'Costumes'), image: heroImage, path: '/collection/costumes' },
+    { name: t('home.collections.categories.chemises', 'Chemises'), image: chemiseImg, path: '/collection/chemises' },
+    { name: t('home.collections.categories.pantalons', 'Pantalons'), image: pantalonImg, path: '/collection/pantalons' },
+    { name: t('home.collections.categories.chaussures', 'Chaussures'), image: chaussureImg, path: '/collection/chaussures' },
+    { name: t('home.collections.categories.ceintures', 'Ceintures'), image: ceintureImg, path: '/collection/ceintures' },
+    { name: t('home.collections.categories.chaussettes', 'Chaussettes'), image: chaussetteImg, path: '/collection/chaussettes' },
+    { name: t('home.collections.categories.cravates', 'Cravates'), image: cravateImg, path: '/collection/cravates' },
+    { name: t('home.collections.categories.polos', 'Polos'), image: poloImg, path: '/collection/polos' },
+    { name: t('home.collections.categories.tshirts', 'T-shirts'), image: tshirtImg, path: '/collection/tshirts' },
   ];
 
   const flatlays = [
@@ -181,42 +181,60 @@ export function Home() {
       </AnimatedSection>
 
       {/* ===== SECTION EXCLUSIVE : NOUVEAUTÉ CHAUSSURES SUR MESURE ===== */}
-      <section className="py-20 px-4 bg-[#0a0a0a] border-t border-b border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedSection>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              
-              <div className="lg:col-span-6 relative group overflow-hidden">
-                <div className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-[#d4af37] text-black text-[11px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 shadow-lg">
-                  <Sparkles className="h-3 w-3 fill-black" /> {t('home.exclusive.badge', 'NOUVEAUTÉ EXCLUSIVE')}
-                </div>
-                <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.6 }} className="h-[480px]">
-                  <img src={chaussureSurMesureImg} alt="Nouvelle collection Chaussures sur mesure par David Roma" className="w-full h-full object-cover" />
-                </motion.div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-              </div>
-
-              <div className="lg:col-span-6 text-left">
-                <p className="text-[#d4af37] text-xs tracking-[0.3em] uppercase mb-3 font-semibold">{t('home.exclusive.tag', 'HAUTE CORDONNERIE')}</p>
-                <h2 className="text-white mb-6" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-                  {t('home.exclusive.title1', 'Souliers ')}<span className="text-[#d4af37]">{t('home.exclusive.title2', 'Sur Mesure')}</span>
-                </h2>
-                <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                  {t('home.exclusive.desc1', 'David Roma franchit une nouvelle étape dans le prestige. Découvrez notre tout nouveau service de confection artisanale à la commande.')}
-                </p>
-                <p className="text-gray-300 text-base leading-relaxed mb-8 border-l-2 border-[#d4af37] pl-4 italic">
-                  {t('home.exclusive.desc2', 'Chaque paire est fabriquée de manière unique en Italie, moulée selon la morphologie de votre pied avec les cuirs les plus nobles de la péninsule.')}
-                </p>
-                <Link to="/contact" className="group inline-flex items-center gap-3 bg-transparent border border-[#d4af37] text-[#d4af37] px-8 py-4 hover:bg-[#d4af37] hover:text-black transition-all duration-300">
-                  <span style={{ letterSpacing: '0.05em', fontSize: '0.85rem' }}>{t('home.exclusive.btn', 'PRENDRE RENDEZ-VOUS')}</span>
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-
-            </div>
-          </AnimatedSection>
+<section className="py-16 sm:py-24 px-4 bg-[#0a0a0a] border-t border-b border-white/5 overflow-hidden">
+  <div className="max-w-6xl mx-auto">
+    <AnimatedSection>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        {/* Conteneur Image corrigé pour le responsive */}
+        <div className="lg:col-span-6 relative group overflow-hidden w-full rounded-sm shadow-2xl">
+          {/* Badge */}
+          <div className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-[#d4af37] text-black text-[10px] sm:text-[11px] font-bold tracking-[0.15em] uppercase px-3 py-1.5 sm:px-4 sm:py-1.5 shadow-lg">
+            <Sparkles className="h-3 w-3 fill-black" /> {t('home.exclusive.badge', 'NOUVEAUTÉ EXCLUSIVE')}
+          </div>
+          
+          {/* Remplacement du h-[480px] fixe par des ratios responsives et fluides */}
+          <motion.div 
+            whileHover={{ scale: 1.02 }} 
+            transition={{ duration: 0.5 }} 
+            className="w-full aspect-square sm:aspect-[4/5] lg:h-[520px]"
+          >
+            <img 
+              src={chaussureSurMesureImg} 
+              alt="Nouvelle collection Chaussures sur mesure par David Roma" 
+              className="w-full h-full object-cover object-center" 
+              loading="lazy"
+            />
+          </motion.div>
+          
+          {/* Voile sombre de finition */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
         </div>
-      </section>
+
+        {/* Conteneur Texte */}
+        <div className="lg:col-span-6 text-left lg:pl-4 mt-4 lg:mt-0">
+          <p className="text-[#d4af37] text-xs tracking-[0.3em] uppercase mb-3 font-semibold">{t('home.exclusive.tag', 'HAUTE CORDONNERIE')}</p>
+          <h2 className="text-white mb-5 sm:mb-6" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 4vw, 3.2rem)', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+            {t('home.exclusive.title1', 'Souliers ')}<span className="text-[#d4af37]">{t('home.exclusive.title2', 'Sur Mesure')}</span>
+          </h2>
+          <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-5 sm:mb-6">
+            {t('home.exclusive.desc1', 'David Roma franchit une nouvelle étape dans le prestige. Découvrez notre tout nouveau service de confection artisanale à la commande.')}
+          </p>
+          <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 border-l-2 border-[#d4af37] pl-4 italic">
+            {t('home.exclusive.desc2', 'Chaque paire est fabriquée de manière unique en Italie, moulée selon la morphologie de votre pied avec les cuirs les plus nobles de la péninsule.')}
+          </p>
+          
+          {/* Bouton adapté au mobile (w-full sur mobile pour cliquer facilement) */}
+          <Link to="/contact" className="group flex sm:inline-flex items-center justify-center gap-3 bg-transparent border border-[#d4af37] text-[#d4af37] px-8 py-4 hover:bg-[#d4af37] hover:text-black transition-all duration-300 w-full sm:w-auto">
+            <span style={{ letterSpacing: '0.05em', fontSize: '0.85rem' }}>{t('home.exclusive.btn', 'PRENDRE RENDEZ-VOUS')}</span>
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </div>
+
+      </div>
+    </AnimatedSection>
+  </div>
+</section>
 
       {/* ===== COLLECTIONS ===== */}
       <section className="py-32 px-4 bg-black">
