@@ -65,14 +65,14 @@ export function About() {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
     name: `À Propos — David Roma`,
-    url: 'https://david-roma.vercel.app/a-propos',
+    url: 'https://david-roma.com/a-propos',
     description: t('about.seo.description', "Découvrez l'histoire de David Roma, spécialiste des vêtements et costumes italiens à Dakar avec plus de 15 ans d'expérience en Italie."),
     mainEntity: {
       '@type': 'Store',
       name: 'David Roma',
-      url: 'https://david-roma.vercel.app',
-      image: 'https://david-roma.vercel.app/og-image.jpg',
-      logo: 'https://david-roma.vercel.app/logo.png',
+      url: 'https://david-roma.com',
+      image: 'https://david-roma.comog-image.jpg',
+      logo: 'https://david-roma.com/logo.png',
       description: t('about.seo.storeDesc', 'Boutique de vêtements et costumes italiens haut de gamme à Dakar.'),
       address: {
         '@type': 'PostalAddress',
@@ -99,9 +99,9 @@ export function About() {
         <meta property="og:title" content={t('about.seo.ogTitle', "À Propos — David Roma | Expert mode italienne à Dakar")} />
         <meta property="og:description" content={t('about.seo.ogDesc', "15+ ans d'expérience en Italie. Partenariats directs ateliers italiens. Originaux moins chers qu'en Italie.")} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://david-roma.vercel.app/a-propos" />
+        <meta property="og:url" content="https://david-roma.com/a-propos" />
         <meta property="og:locale" content={i18n.language === 'it' ? 'it_IT' : 'fr_SN'} />
-        <link rel="canonical" href="https://david-roma.vercel.app/a-propos" />
+        <link rel="canonical" href="https://david-roma.com/a-propos" />
 
         <script type="application/ld+json">
           {JSON.stringify(aboutSchema)}

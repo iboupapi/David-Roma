@@ -4,7 +4,7 @@
  */
 
 export function JsonLd() {
-  const baseUrl = 'https://david-roma.vercel.app';
+  const baseUrl = 'https://www.david-roma.com';
 
   const schema = {
     '@context': 'https://schema.org',

@@ -92,7 +92,7 @@ export function Contact() {
       <Helmet>
         <title>{t('contact.seo.title', 'Showroom Privé & Rendez-vous — David Roma | Dakar')}</title>
         <meta name="description" content={t('contact.seo.description', 'Réservez votre séance de stylisme privée avec David Roma à SICAP Liberté 1, Dakar. Costumes et prêt-à-porter originaux d’Italie.')} />
-        <link rel="canonical" href="https://davidroma.sn/contact" />
+        <link rel="canonical" href="https://david-roma.com/contact" />
       </Helmet>
 
       {/* Hero */}

@@ -177,7 +177,7 @@ export function ProductShowcase() {
     "@type": "CollectionPage",
     "name": `${product.title} Premium — David Roma Dakar`,
     "description": product.description,
-    "url": `https://davidroma.sn/collections/${currentCategory}`,
+    "url": `https://www.david-roma.com/collections/${currentCategory}`,
     "mainEntity": {
       "@type": "ItemList",
       "name": `Sélection de ${product.title}`,
@@ -198,7 +198,7 @@ export function ProductShowcase() {
         <meta name="description" content={t('showcase.seo.description', '{{title}} premium disponibles chez David Roma à Dakar. {{desc}}', { title: product.title, desc: product.description })} />
         <meta property="og:title" content={t('showcase.seo.ogTitle', '{{title}} — David Roma Dakar', { title: product.title })} />
         <meta property="og:description" content={product.description} />
-        <link rel="canonical" href={`https://davidroma.sn/collections/${currentCategory}`} />
+        <link rel="canonical" href={`https://www.david-roma.com/collections/${currentCategory}`} />
         
         {/* Balisage JSON-LD sécurisé sans attributs marchands requis */}
         <script type="application/ld+json">

@@ -73,9 +73,9 @@ export function Home() {
     "@context": "https://schema.org",
     "@type": "Store",
     "name": "David Roma",
-    "image": "https://davidroma.sn/og-image.jpg", 
-    "@id": "https://davidroma.sn/#store",
-    "url": "https://davidroma.sn/",
+    "image": "https://www.david-roma.com/og-image.jpg", 
+    "@id": "https://www.david-roma.com/#store",
+    "url": "https://www.david-roma.com/",
     "telephone": SITE_CONFIG.telephone || "",
     "address": {
       "@type": "PostalAddress",
@@ -95,9 +95,9 @@ export function Home() {
         <meta property="og:title" content={t('home.seo.title', 'David Roma — Costume & Vêtements Italiens à Dakar, Sénégal')} />
         <meta property="og:description" content={t('home.seo.ogDesc', 'Costumes, blazers, chemises et chaussures 100% Made in Italy à Dakar.')} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://davidroma.sn/" />
+        <meta property="og:url" content="https://www.david-roma.com/" />
         <meta property="og:locale" content={i18n.language === 'it' ? 'it_IT' : 'fr_SN'} />
-        <link rel="canonical" href="https://davidroma.sn/" />
+        <link rel="canonical" href="https://www.david-roma.com/" />
         
         {/* Injecté de manière propre sans aucune référence à `@type: "Product"` */}
         <script type="application/ld+json">

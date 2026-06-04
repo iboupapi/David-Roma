@@ -99,14 +99,14 @@ export function Collections() {
       <Helmet>
   <title>{t('collections.seo.title', 'Collections — David Roma | Vêtements & Accessoires italiens à Dakar')}</title>
   <meta name="description" content={t('collections.seo.description', "Blazers, costumes, chemises, pantalons, ceintures, chaussettes et chaussures 100% made in Italy. Moins chers qu'en Italie. Showroom David Roma à Dakar, SICAP Liberté 1.")} />
-  <link rel="canonical" href="https://david-roma.vercel.app/collections" />
+  <link rel="canonical" href="https://david-roma.com/collections" />
   
   <script type="application/ld+json">
     {JSON.stringify({
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": t('collections.seo.ogTitle', 'Collections David Roma'),
-      "url": "https://david-roma.vercel.app/collections",
+      "url": "https://david-roma.com/collections",
       "description": t('collections.seo.ogDesc', 'Collections de vêtements et accessoires italiens premium à Dakar.'),
       "mainEntity": {
         "@type": "ItemList",
@@ -115,7 +115,7 @@ export function Collections() {
           "@type": "ListItem",
           "position": index + 1,
           "name": col.name,
-          "url": `https://david-roma.vercel.app/collection/${col.slug}`
+          "url": `https://david-roma.com/collection/${col.slug}`
         }))
       }
     })}
